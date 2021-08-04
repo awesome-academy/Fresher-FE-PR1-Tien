@@ -1,20 +1,79 @@
 .header {
   color: $gray-color;
 
+  // top menu
   .top__menu {
     background-color: $black-color;
     height: 3rem;
 
+    // icons
     .icon__link {
       @extend .header;
       border: 1px solid;
-      border-color: $black-color $gray-color;
+      border-color: $black-color $light-black-color;
       padding: 0 1rem;
       text-decoration: none;
     }
 
+    // open time
     &--left {
-        width: 50%;
+      width: 60%;
+    }
+  }
+
+  // main menu
+  .main__menu {
+    background-color: $light-gray-color;
+
+    // background img
+    .img-fluids {
+      font-size: 3rem;
+    }
+
+    .bg__img1 {
+      height: 6rem;
+      margin-top: 3rem;
+    }
+
+    .bg__img2 {
+      height: 14rem;
+      position: absolute;
+      left: 60px;
+      top: -33px;
+    }
+
+    // search input
+    .phone__number {
+      padding-left: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .search__input {
+      width: 29rem;
+      padding: 1rem;
+      padding-left: 2rem;
+      border: none;
+      margin-top: 1rem;
+    }
+
+    .search__icon {
+      position: absolute;
+      top: 22px;
+      right: 50px;
+      border-left: 1px solid $light-gray-color;
+      height: 40px;
+      padding-left: 20px;
+
+      &::before {
+        position: absolute;
+        top: 13px;
+        right: -20px;
+      }
+    }
+
+    // shopping basket
+    .basket__container {
+      margin-top: 2rem;
     }
   }
 }
