@@ -1,0 +1,28 @@
+header(class="header")
+    // top menu
+    div(class="top__menu")
+        div(class="top__menu__container container d-flex justify-content-between h-100")
+            // open time, social icons
+            div(class="top__menu--left d-flex h-100")
+                // open time
+                div(class="container d-flex align-items-center")
+                    i(class="far fa-clock me-2")
+                    span Open time: 8:00 - 18:00 Monday - Sunday
+
+                // social Icons
+                div(class="container d-flex h-100")
+                    each icon in socialIcons
+                        a(class="icon__link d-flex align-items-center")
+                            i(class=`fab fa-${icon}`)
+
+            //sign-in, sign-up
+            div(class="top__menu--right d-flex")
+                each user in userIcons
+                    a(class="icon__link d-flex align-items-center")
+                        i(class=`fas fa-${user.icon}`)
+                        span.ms-1= user.text
+
+    // main menu
+    div(class="main__menu")
+    // navbar
+    div(class="nav__bar")

@@ -1,0 +1,20 @@
+.header {
+  color: $gray-color;
+
+  .top__menu {
+    background-color: $black-color;
+    height: 3rem;
+
+    .icon__link {
+      @extend .header;
+      border: 1px solid;
+      border-color: $black-color $gray-color;
+      padding: 0 1rem;
+      text-decoration: none;
+    }
+
+    &--left {
+        width: 50%;
+    }
+  }
+}
