@@ -31,7 +31,7 @@ function htmlTask() {
 
 // link all js files to 1 file:
 function jsTask() {
-  return src(jsFiles).pipe(concat("all.js")).pipe(dest("dist/js"));
+  return src(['node_modules/bootstrap/dist/js/bootstrap.min.js',jsFiles]).pipe(concat("all.js")).pipe(dest("dist/js"));
 }
 
 // copy assets to dist folder

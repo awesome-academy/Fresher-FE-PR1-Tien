@@ -17,7 +17,7 @@
 
     // open time
     &--left {
-      width: 60%;
+      width: 55%;
     }
   }
 
@@ -74,6 +74,36 @@
     // shopping basket
     .basket__container {
       margin-top: 2rem;
+    }
+  }
+
+  // navbar
+  .navbar {
+    background-color: $green-color;
+    padding-top: 0;
+    padding-bottom: 0;
+
+    .menu__btn {
+      color: $white-color;
+      background: transparent;
+      border: none;
+      font-size: 1.5rem;
+      margin-right: 2rem;
+      box-shadow: none;
+    }
+
+    .navbar-brand {
+      @extend .menu__btn;
+    }
+
+    .nav-link {
+      color: $white-color;
+      text-transform: uppercase;
+      padding: 1.2rem 2rem;
+
+      &:hover {
+        background-color: $dim-green-color;
+      }
     }
   }
 }
