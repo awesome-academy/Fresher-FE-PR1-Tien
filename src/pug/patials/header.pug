@@ -1,28 +1,54 @@
-header(class="header")
-    // top menu
-    div(class="top__menu")
-        div(class="top__menu__container container d-flex justify-content-between h-100")
+header.header
+    .top__menu
+        .top__menu__container.container.d-flex.justify-content-between.h-100
             // open time, social icons
-            div(class="top__menu--left d-flex h-100")
+            .top__menu--left.d-flex.h-100
                 // open time
-                div(class="container d-flex align-items-center")
+                .container.d-flex.align-items-center
                     i(class="far fa-clock me-2")
                     span Open time: 8:00 - 18:00 Monday - Sunday
 
                 // social Icons
-                div(class="container d-flex h-100")
+                .container.d-flex.h-100
                     each icon in socialIcons
                         a(class="icon__link d-flex align-items-center")
                             i(class=`fab fa-${icon}`)
 
             //sign-in, sign-up
-            div(class="top__menu--right d-flex")
+            .top__menu--right.d-flex
                 each user in userIcons
                     a(class="icon__link d-flex align-items-center")
                         i(class=`fas fa-${user.icon}`)
                         span.ms-1= user.text
 
     // main menu
-    div(class="main__menu")
+    .main__menu
+        .d-flex.container.justify-content-between
+            // logo
+            .container.d-flex.align-items-center
+                +brandName
+
+                // flowers
+                .d-flex.container.position-relative.ms-0.ps-0
+                    img(class="img-fluid bg__img1" src=bgImg1 alt="flowers")
+                    img(class="img-fluid bg__img2" src=bgImg2 alt="flowers")
+
+            // inputs
+            .container.d-flex.align-items-center.justify-content-between
+                // search input, telephone
+                .container
+                    span.phone__number
+                        i(class= `${phoneIcon} me-2`)
+                        | HỖ TRỢ :  (04) 6674 2332 - (04) 3786 8904
+
+                    form.position-relative
+                        input(type="text" class="search__input rounded-pill" placeholder="Tìm kiếm")
+                        i(class=`${magnifyIcon} search__icon`)
+
+                // shopping basket
+                .container.d-flex.basket__container.justify-content-between
+                    i(class=`${shoppingBasketIcon} text-dark fs-5`)
+                    span(class="fs-6 mt-1") 0 Sản phẩm
+
     // navbar
-    div(class="nav__bar")
+    .nav__bar
