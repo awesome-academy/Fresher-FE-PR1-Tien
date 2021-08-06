@@ -1,0 +1,39 @@
+// brand name
+.brand__name {
+  color: $green-color;
+  font-size: 5rem;
+  width: 67%;
+  padding-left: 0;
+  margin-left: 0;
+
+  &--font {
+    font-family: $logo-font;
+  }
+
+  .brand__sub {
+    color: $gray-color;
+    font-size: 1.6rem;
+  }
+}
+
+// email input
+.email__input {
+  .input-group {
+    .input {
+      padding: 1rem 16rem 1rem 1rem;
+      border: none;
+    }
+
+    .input-group-text {
+      background-color: $green-color;
+      border: none;
+      color: $white-color;
+      border-radius: 0;
+      -webkit-border-radius: 0;
+      -moz-border-radius: 0;
+      -ms-border-radius: 0;
+      -o-border-radius: 0;
+      padding: 0 18px;
+    }
+  }
+}

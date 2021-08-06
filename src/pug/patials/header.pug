@@ -51,4 +51,27 @@ header.header
                     span(class="fs-6 mt-1") 0 Sản phẩm
 
     // navbar
-    .nav__bar
+    nav(class="navbar navbar-expand-lg sticky-top")
+        .container.navbar__container
+            a(class="navbar-brand ms-2 d-none d-lg-block" href="#")
+                i(class=`${menu}`)
+
+            // menu button
+            button(class="navbar-toggler menu__btn ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation")
+                i(class=`${menu}`)
+
+            // list
+            .collapse.navbar-collapse#navbarNav
+                ul(class="navbar-nav")
+                    each link in navLink
+                        // drop-down
+                        if link.list
+                            li(class="nav-item dropdown")
+                                a(class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false")= link.name
+                                ul(class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink")
+                                    li
+                                        a(class="dropdown-item" href="#") Action
+                        else
+                            // nav-link
+                            li(class="nav-item")
+                                a(class="nav-link" href=`#${link.id}`)= link.name
