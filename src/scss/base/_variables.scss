@@ -19,6 +19,19 @@ $white-color: #ffffff;
 $black-color: #202020;
 $light-black-color: #2b2b2b;
 $gray-color: #7b7b7b;
+$dim-gray-color: #313131;
 $light-gray-color: #ededed;
+$footer-gray-color: #b7b7b7;
 $green-color: #3fb871;
 $dim-green-color: #36a66d;
+
+// media queries
+$breakpoints: (
+  mobile-sm: 320px,
+  mobile-md: 375px,
+  mobile: 425px,
+  tablet: 768px,
+  laptop: 1024px,
+  laptop-lg: 1440px,
+  4k: 2560px,
+);
