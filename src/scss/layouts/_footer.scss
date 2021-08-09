@@ -1,0 +1,92 @@
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: $dim-gray-color;
+  color: $gray-color;
+
+  .right {
+    width: 64%;
+  }
+
+  .left {
+    width: 36%;
+  }
+
+  // contact
+  .contact__container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    font-size: 1rem;
+
+    .icon__link {
+      text-decoration: none;
+      color: $gray-color;
+
+      .fab {
+        font-size: 1.3rem;
+      }
+    }
+  }
+
+  //content
+  .content__container {
+    @extend .contact__container;
+    color: $footer-gray-color;
+    font-size: 1rem;
+
+    .content {
+      height: 20rem;
+
+      &__p {
+        line-height: 2rem;
+        font-size: 0.9rem;
+        width: 86%;
+      }
+
+      .h3 {
+        color: $green-color;
+        font-size: 1.1rem;
+      }
+
+      .link {
+        text-decoration: none;
+        color: $footer-gray-color;
+
+        &:hover {
+          .link__item {
+            text-decoration: underline;
+          }
+        }
+      }
+
+      .icon {
+        color: $green-color;
+        font-size: 1.2rem;
+      }
+
+      .news {
+        width: 28.3%;
+      }
+
+      .link__new {
+        width: 15%;
+      }
+    }
+  }
+
+  //helper
+  .helper__container {
+    @extend .content__container;
+
+    .helper {
+      width: 50%;
+      font-size: 1rem;
+    }
+
+    .cards {
+      width: 15%;
+      font-size: 1.5rem;
+    }
+  }
+}

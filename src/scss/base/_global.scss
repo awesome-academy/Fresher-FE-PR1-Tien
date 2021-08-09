@@ -1,23 +1,6 @@
 body {
   font-family: $main-font;
-}
-
-// brand name
-.brand__name {
-  color: $green-color;
-  font-size: 5rem;
-  width: 55%;
-  padding-left: 0;
-  margin-left: 0;
-
-  &--font {
-    font-family: $logo-font;
-  }
-}
-
-.brand__sub {
-  color: $gray-color;
-  font-size: 1.6rem;
+  height: 100vh;
 }
 
 // dipose border inputs
