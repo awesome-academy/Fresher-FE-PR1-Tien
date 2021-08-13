@@ -4,5 +4,22 @@ block title
     title Trang Chủ
 
 block content
-    section.main
-        p abc
+    section#main.main
+        // sliders
+        #carouselExampleIndicators.carousel.slide(data-bs-ride="carousel")
+            .carousel-indicators
+                each img,index in sliders
+                    if img.active
+                        button(type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to=index class="active" aria-current="true")
+
+                    else
+                        button(type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to=index)
+            .carousel-inner
+                each img in sliders
+                    if img.active
+                        .carousel-item.active
+                            img(src=img.src class="d-block w-100" alt=img.alt)
+
+                    else
+                        .carousel-item
+                            img(src=img.src class="d-block w-100" alt=img.alt)
