@@ -13,3 +13,33 @@ mixin emailInput
             input(type="text" class="input")
             span(class="input-group-text")
                 i(class=`${paperPlaneIcon}`)
+
+// product card
+mixin productCardVertical(src, alt, name, price, discount)
+    .card.rounded-0.product__card
+        img(src=src class="card-img-top" alt=alt)
+        .card-body.d-flex.flex-column.align-items-center
+            h5.card-title= name
+            p.card-text.mb-2
+                - for (var i = 0; i < 4; i++) {
+                    i(class=`product__star ${fullStar}`)
+                - }
+                i(class=`product__star ${halfStar}`)
+            .d-flex
+                span.me-2.product__price= price
+                span.product__discount= discount
+
+mixin productCardHorizontal(src, alt, name, price, discount)
+    .card.mb-3.product__card.product__card--horizontal
+        .row.g-0
+            .col-md-4.product__img
+                img(src=src class="img-fluid rounded-start" alt=alt)
+            .col-md-8
+                .card-body
+                    h5.card-title= name
+                    p.card-text.mb-2
+                        - for (var i = 0; i < 4; i++) {
+                            i(class=`product__star ${fullStar}`)
+                        - }
+                        i(class=`product__star ${halfStar}`)
+                    span.me-2.product__price= price

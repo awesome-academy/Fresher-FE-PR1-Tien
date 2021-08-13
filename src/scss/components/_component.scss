@@ -60,3 +60,33 @@
     }
   }
 }
+
+// product card
+.product__card {
+  width: 18rem;
+
+  .product__star {
+    color: $yellow-color;
+    font-size: 0.8rem;
+    margin-right: 4px;
+  }
+
+  .product__price {
+    color: $red-color;
+    font-weight: bold;
+  }
+
+  .product__discount {
+    color: $gray-color;
+    text-decoration: line-through;
+    font-weight: bold;
+  }
+}
+
+.product__card--horizontal{
+  width: 20rem;
+
+  .product__img{
+    padding: 1rem;
+  }
+}
