@@ -16,8 +16,14 @@ mixin emailInput
 
 // product card
 mixin productCardVertical(src, alt, name, price, discount)
-    .card.rounded-0.product__card
-        img(src=src class="card-img-top" alt=alt)
+    .card.rounded-0.product__card&attributes(attributes)
+        .container-fluid
+            img(src=src class="card-img-top" alt=alt)
+            .card-img-overlay.rounded-0
+                .container.d-flex.justify-content-center
+                    button.rounded-pill.buy__btn.me-2 MUA NGAY
+                    button.rounded-circle.search__btn
+                        i(class=`${magnifyIcon}`)
         .card-body.d-flex.flex-column.align-items-center
             h5.card-title= name
             p.card-text.mb-2
@@ -43,3 +49,10 @@ mixin productCardHorizontal(src, alt, name, price, discount)
                         - }
                         i(class=`product__star ${halfStar}`)
                     span.me-2.product__price= price
+
+// section label
+mixin sectionLabel(label)
+    .section__label
+        span.label= label
+        .progress
+            .progress-bar(role="progressbar")
