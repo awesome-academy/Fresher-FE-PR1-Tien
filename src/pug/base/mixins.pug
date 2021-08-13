@@ -36,7 +36,7 @@ mixin productCardVertical(src, alt, name, price, discount)
                 span.product__discount= discount
 
 mixin productCardHorizontal(src, alt, name, price, discount)
-    .card.mb-3.product__card.product__card--horizontal
+    .card.product__card.product__card--horizontal.rounded-0
         .row.g-0
             .col-md-4.product__img
                 img(src=src class="img-fluid rounded-start" alt=alt)
@@ -51,8 +51,8 @@ mixin productCardHorizontal(src, alt, name, price, discount)
                     span.me-2.product__price= price
 
 // section label
-mixin sectionLabel(label)
+mixin sectionLabel(label, width)
     .section__label
-        span.label= label
+        span.label(style=`width: ${width}rem`)= label
         .progress
-            .progress-bar(role="progressbar")
+            .progress-bar(role="progressbar")(style=`width: ${width}rem`)
