@@ -116,7 +116,7 @@
 }
 
 .product__card--horizontal {
-  width: 20rem;
+  width: 18.5rem;
 
   .product__img {
     padding: 1rem;
@@ -159,7 +159,6 @@
     color: $green-color;
     top: -30px;
     font-size: 1.5rem;
-    width: 12rem;
   }
 
   .progress {
@@ -167,7 +166,6 @@
   }
 
   .progress-bar {
-    width: 12rem;
     background-color: $green-color;
   }
 }
