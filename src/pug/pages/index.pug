@@ -23,3 +23,10 @@ block content
                     else
                         .carousel-item
                             img(src=img.src class="d-block w-100" alt=img.alt)
+
+        //
+        .container.m-5
+            each product in products
+                +productCardVertical(product.src, product.alt, product.name, product.price, product.discount)
+
+                +productCardHorizontal(product.src, product.alt, product.name, product.price, product.discount)
