@@ -63,7 +63,14 @@
 
 // product card
 .product__card {
-  width: 18rem;
+  .container-fluid {
+    padding: 0px;
+    position: relative;
+
+    .card-img-overlay {
+      display: none;
+    }
+  }
 
   .product__star {
     color: $yellow-color;
@@ -81,12 +88,86 @@
     text-decoration: line-through;
     font-weight: bold;
   }
+
+  &:hover {
+    .card-img-overlay {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $opacity-gray-color;
+
+      .buy__btn {
+        background-color: $green-color;
+        color: $white-color;
+        border: none;
+        height: 3rem;
+        width: 9rem;
+      }
+
+      .search__btn {
+        @extend .buy__btn;
+
+        background-color: $white-color;
+        color: $black-color;
+        width: 3rem;
+      }
+    }
+  }
 }
 
-.product__card--horizontal{
+.product__card--horizontal {
   width: 20rem;
 
-  .product__img{
+  .product__img {
     padding: 1rem;
+  }
+}
+
+.card__badge__new:after {
+  position: absolute;
+  content: "NEW";
+  color: $white-color;
+  background-color: $green-color;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  top: 20px;
+  left: 20px;
+}
+
+.card__badge__discount:after {
+  @extend .card__badge__new;
+
+  background-color: $red-color;
+  content: "50%";
+}
+
+// section label
+.section__label {
+  position: relative;
+
+  .label {
+    position: absolute;
+    font-weight: bold;
+    color: $green-color;
+    top: -30px;
+    font-size: 1.5rem;
+    width: 12rem;
+  }
+
+  .progress {
+    height: 2px;
+  }
+
+  .progress-bar {
+    width: 12rem;
+    background-color: $green-color;
   }
 }

@@ -24,9 +24,15 @@ block content
                         .carousel-item
                             img(src=img.src class="d-block w-100" alt=img.alt)
 
-        //
-        .container.m-5
-            each product in products
-                +productCardVertical(product.src, product.alt, product.name, product.price, product.discount)
-
-                +productCardHorizontal(product.src, product.alt, product.name, product.price, product.discount)
+        //product highlight
+        .container.main__container
+            +sectionLabel('Sản phẩm nổi bật')
+            .grid__container.mt-5
+                - for (var i = 0; i < 6; i++) {
+                    if i==0
+                        +productCardVertical(products[i].src, products[i].alt, products[i].name, products[i].price, products[i].discount)(class="grid__start card__badge__new")
+                    else if i==5
+                        +productCardVertical(products[i].src, products[i].alt, products[i].name, products[i].price, products[i].discount)(class="grid__end card__badge__discount")
+                    else
+                        +productCardVertical(products[i].src, products[i].alt, products[i].name, products[i].price, products[i].discount)
+                - }
