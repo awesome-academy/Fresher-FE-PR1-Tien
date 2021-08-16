@@ -43,10 +43,33 @@ block content
                 // top-sale products
                 .col-4
                     +sectionLabel('Sản phẩm mua nhiều','15')
-                    .mt-3
-                        each product in products
-                            +productCardHorizontal(product.src, product.alt, product.name, product.price, product.discount)
+                    .mt-5
+                        - for (var i = 0; i < 6; i++) {
+                            +productCardHorizontal(products[i].src, products[i].alt, products[i].name, products[i].price, products[i].discount)
+                        - }
 
                 // sale products
-                .col-8
+                .col-8.sale__products
+                    +sectionLabel('Sản phẩm khuyến mãi','15')
+                    .mt-5
+                        #carouselExampleFade.carousel.slide.carousel-fade(data-bs-ride="carousel")
+                            .carousel-inner
+                                .carousel-item.active
+                                    .row.row-cols-1.row-cols-3.g-4
+                                        - for (var i = 0; i < 6; i++) {
+                                            .col
+                                                +productCardVertical(products[i].src, products[i].alt, products[i].name, products[i].price, products[i].discount)(class="card__badge__discount")
+                                        - }
+                                .carousel-item
+                                    .row.row-cols-1.row-cols-3.g-4
+                                        - for (var i = 6; i < 12; i++) {
+                                            .col
+                                                +productCardVertical(products[i].src, products[i].alt, products[i].name, products[i].price, products[i].discount)(class="card__badge__discount")
+                                        - }
+                            .button__ctrl
+                                button.carousel-control-prev(type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev")
+                                    i(class=`arrow ${prevArrow}`)
+                                button.carousel-control-next(type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next")
+                                    i(class=`arrow ${nextArrow}`)
 
+        //
