@@ -76,6 +76,12 @@
     color: $yellow-color;
     font-size: 0.8rem;
     margin-right: 4px;
+
+    @include for-size(mobile) {
+      font-size: 1.5rem;
+      margin-top: 1.8rem;
+      margin-bottom: 1.8rem;
+    }
   }
 
   .product__price {
@@ -115,11 +121,33 @@
   }
 }
 
+.product__card--vertical {
+  .card-body {
+    padding: 14% 1rem;
+
+    @include for-size(mobile) {
+      font-size: 1.5rem;
+    }
+  }
+}
+
 .product__card--horizontal {
-  width: 18.5rem;
+  width: 100%;
 
   .product__img {
     padding: 1rem;
+  }
+
+  .card-body {
+    @include for-size(mobile) {
+      font-size: 1.5rem;
+    }
+
+    .card-title {
+      @include for-size(mobile) {
+        font-size: 1.8rem;
+      }
+    }
   }
 }
 
