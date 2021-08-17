@@ -33,6 +33,10 @@
         .button__group {
           width: 40%;
 
+          @include for-size(mobile) {
+            width: 60%;
+          }
+
           .increase__button {
             background-color: transparent;
             padding: 1rem;
@@ -53,9 +57,17 @@
 
         .inputs {
           width: 40%;
+
+          @include for-size(mobile) {
+            width: 60%;
+          }
         }
 
         .social__group {
+          @include for-size(mobile) {
+            width: 60%;
+          }
+
           .btn__social {
             margin-right: 5px;
 
@@ -138,6 +150,11 @@
         -moz-border-radius: 0px;
         -ms-border-radius: 0px;
         -o-border-radius: 0px;
+
+        @include for-size(mobile){
+          font-size: 1rem;
+          padding: 1rem 1.5rem;
+        }
 
         &:focus {
           color: $green-color;

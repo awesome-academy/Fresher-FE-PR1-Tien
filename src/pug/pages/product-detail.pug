@@ -12,9 +12,9 @@ block content
         .container.product__detail__container
             .card.product__card.product__card--horizontal.rounded-0
                 .row.g-0
-                    .col-5.product__img
+                    .d-row.d-md-block.col-md-5.product__img
                         img(src="./assets/img/products/spx2-1.png" class="img-fluid rounded-start" alt="flower pot")
-                    .col-7
+                    .d-row.d-md-block.col-md-7
                         .card-body
                             a.card-title(href="product-detail.html") Cây Dạ Lam
                             p.card-text.my-3
@@ -51,7 +51,7 @@ block content
                                         .popup 0
 
         // product mini album
-        .container.mt-5
+        .d-none.d-md-block.container.mt-5
             .row
                 .col-5.album
                     - for (var i = 0; i < 5; i++) {
@@ -81,7 +81,7 @@ block content
                         p.text= item
 
         // similar products
-        .container.product__detail__container
+        .container.product__detail__container.d-none.d-md-block
             +sectionLabel('Sản phẩm cùng loại','14')
             .mt-5.similar__products
                 #carouselExampleFade1.carousel.slide.carousel-fade(data-bs-ride="carousel")
@@ -104,3 +104,22 @@ block content
                         button.carousel-control-next(type="button" data-bs-target="#carouselExampleFade1" data-bs-slide="next")
                             i(class=`arrow ${nextArrow}`)
 
+        // similar products (mobile)
+        .container.main__container.d-block.d-md-none.mb-5
+            +sectionLabel('Sản phẩm mới','10')
+            .mt-5.similar__products
+                #carouselExampleFade4.carousel.slide.carousel-fade(data-bs-ride="carousel")
+                    .carousel-inner
+                        each product in products
+                            if product.active
+                                .carousel-item.active
+                                    +productCardVertical(product.src, product.alt, product.name, product.price, product.discount)
+                            else
+                                .carousel-item
+                                    +productCardVertical(product.src, product.alt, product.name, product.price, product.discount)
+
+                    .button__ctrl
+                        button.carousel-control-prev(type="button" data-bs-target="#carouselExampleFade4" data-bs-slide="prev")
+                            i(class=`arrow ${prevArrow}`)
+                        button.carousel-control-next(type="button" data-bs-target="#carouselExampleFade4" data-bs-slide="next")
+                            i(class=`arrow ${nextArrow}`)
