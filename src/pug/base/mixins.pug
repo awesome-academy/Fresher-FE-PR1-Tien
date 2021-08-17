@@ -131,3 +131,22 @@ mixin news(number,header=false)
             p.card-text.mt-4 Như thể hiện sự thân thiện cũng như sự hiếu khách của gia chủ, phần không gian trước cửa nhà luôn được đầu tư và trang trí khá bắt mắt. Cũng có thể nói đây là bộ mặt của ngôi nhà, là ấn tượng đầu tiên khi một vị khách ghé chơi nhà bạn đấy. Hãy cùng Sài Gòn Hoa tham khảo một vài cách bố trí chậu cây hoa cảnh ngay trước cửa nhà sao cho ấn tượng nhất nhé!
             block
 
+// comment
+mixin comment(name)
+    .card.comment
+        .row.g-0&attributes(attributes)
+            .col-2.d-flex.align-items-center
+                .zoom
+            .col-10
+                .card-body
+                    .row
+                        .col-10.p-0
+                            h5.card-title= name
+                            p.card-text.content.my-3 This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.
+                            p.card-text.content Thứ 7, 26/12/2015 12: 00 AM
+                        .col-2.p-0.text-end
+                            a.reply(href="#") Trả lời
+
+// button
+mixin button(name)
+    button.rounded-pill.form__btn= name

@@ -351,3 +351,23 @@
     }
   }
 }
+
+// form
+.form {
+  padding: 1rem 8% 1rem 1rem;
+
+  @include for-size(mobile) {
+    padding-right: 1%;
+  }
+
+  border: 1px solid $gray-color;
+}
+
+// button form
+.form__btn {
+  background-color: $green-color;
+  color: $white-color;
+  border: none;
+  height: 3rem;
+  width: 9rem;
+}
