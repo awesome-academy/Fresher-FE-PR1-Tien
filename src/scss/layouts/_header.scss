@@ -139,5 +139,29 @@
         background-color: $dim-green-color;
       }
     }
+
+    .dropdown-menu {
+      background-color: $green-color;
+      margin-top: 0px;
+      padding: 0px;
+      border-top: 0px;
+      border-radius: 0px;
+      -webkit-border-radius: 0px;
+      -moz-border-radius: 0px;
+      -ms-border-radius: 0px;
+      -o-border-radius: 0px;
+
+      .dropdown-item{
+        color: $white-color;
+        padding: 1rem 0px;
+        display: flex;
+        justify-content: center;
+
+        &:hover{
+          color: $white-color;
+          background-color: $dim-green-color;
+        }
+      }
+    }
   }
 }

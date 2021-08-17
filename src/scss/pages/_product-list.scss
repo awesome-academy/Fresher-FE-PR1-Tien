@@ -23,6 +23,11 @@
     .wrapper--bottom {
       margin-bottom: 3rem;
       margin-top: 2rem;
+
+      @include for-size(tablet) {
+        margin-top: 3rem;
+        margin-bottom: 2rem;
+      }
     }
 
     .cover {
@@ -59,10 +64,9 @@
         &:after {
           font-size: 1.5rem;
           content: "▾";
-          padding: 8px 12%;
           position: absolute;
-          right: 15px;
-          top: 0;
+          right: 1.2rem;
+          top: 0.5rem;
           z-index: 1;
           text-align: center;
           width: 10%;
@@ -72,10 +76,34 @@
       }
     }
 
+    .tab-pane {
+      .tab-img {
+        .product__img {
+          padding: 0px;
+        }
+
+        .img-fluid {
+          height: 100%;
+        }
+
+        .card-title {
+          font-size: 1.8rem;
+        }
+
+        .product__price {
+          font-size: 1.5rem;
+        }
+      }
+    }
+
     .pagination {
       display: flex;
       justify-content: space-between;
       width: 60%;
+
+      @include for-size(mobile) {
+        width: 100%;
+      }
 
       .page-item {
         .page-link {
