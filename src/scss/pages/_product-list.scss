@@ -3,19 +3,6 @@
     margin-top: 2rem;
     margin-bottom: 3rem;
 
-    .breadcrumb {
-      &__link {
-        text-decoration: none;
-        color: $gray-color;
-
-        &__current {
-          @extend .breadcrumb__link;
-
-          color: $green-color;
-        }
-      }
-    }
-
     .wrapper {
       margin-top: 5rem;
     }
@@ -24,7 +11,7 @@
       margin-bottom: 3rem;
       margin-top: 2rem;
 
-      @include for-size(tablet) {
+      @include for-size(tablet){
         margin-top: 3rem;
         margin-bottom: 2rem;
       }
@@ -101,7 +88,7 @@
       justify-content: space-between;
       width: 60%;
 
-      @include for-size(mobile) {
+      @include for-size(mobile){
         width: 100%;
       }
 

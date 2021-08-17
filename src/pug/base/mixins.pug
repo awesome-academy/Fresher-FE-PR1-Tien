@@ -25,7 +25,7 @@ mixin productCardVertical(src, alt, name, price, discount)
                     button.rounded-circle.search__btn
                         i(class=`${magnifyIcon}`)
         .card-body.d-flex.flex-column.align-items-center
-            h5.card-title= name
+            a.card-title(href="product-detail.html")= name
             p.card-text.mb-2
                 - for (var i = 0; i < 4; i++) {
                     i(class=`product__star ${fullStar}`)
@@ -42,7 +42,7 @@ mixin productCardHorizontal(src, alt, name, price, discount)
                 img(src=src class="img-fluid rounded-start" alt=alt)
             .col-8
                 .card-body
-                    h5.card-title= name
+                    a.card-title(href="product-detail.html")= name
                     p.card-text.mb-2
                         - for (var i = 0; i < 4; i++) {
                             i(class=`product__star ${fullStar}`)

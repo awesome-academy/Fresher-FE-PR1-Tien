@@ -1,0 +1,137 @@
+.product__detail {
+  background-color: $white-color;
+
+  &__container {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+
+    .card {
+      border: none;
+
+      .product__img {
+        height: 100%;
+      }
+
+      .card-body {
+        .card-title {
+          font-size: 2rem;
+        }
+
+        .product__price {
+          font-size: 1.3rem;
+        }
+
+        .product__discount {
+          @extend .product__price;
+        }
+
+        .product__content {
+          color: $gray-color;
+        }
+
+        .button__group {
+          width: 40%;
+
+          .increase__button {
+            background-color: transparent;
+            padding: 1rem;
+            border: 1px solid $gray-color;
+            font-size: 0.7rem;
+          }
+
+          .decrease__button {
+            @extend .increase__button;
+          }
+
+          .quantity__button {
+            @extend .increase__button;
+
+            padding: 1rem 3rem;
+          }
+        }
+
+        .inputs {
+          width: 40%;
+        }
+
+        .social__group {
+          .btn__social {
+            margin-right: 5px;
+
+            .icon {
+              font-weight: bold;
+
+              &:before {
+                margin-right: 5px;
+              }
+            }
+          }
+
+          .popup {
+            position: relative;
+            display: none;
+
+            &::before {
+              content: "";
+              position: absolute;
+              bottom: 25%;
+              left: -0.55em;
+              border: 0.5rem solid transparent;
+              border-left: none;
+              border-right-color: #fff;
+              filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 0, 1));
+            }
+          }
+
+          @each $name, $color in $social-share-color {
+            .#{$name}__color {
+              background-color: $color;
+              color: $white-color;
+
+              &:hover + .popup {
+                justify-content: center;
+                display: flex;
+                align-items: center;
+                color: $black-color;
+                border: 1px solid $black-color;
+                border-radius: 4px;
+                width: 2rem;
+                margin-right: 0.5rem;
+                margin-left: 0.5rem;
+                -webkit-border-radius: 4px;
+                -moz-border-radius: 4px;
+                -ms-border-radius: 4px;
+                -o-border-radius: 4px;
+              }
+
+              @if $name == "google" {
+                background-color: $white-color;
+                color: $color;
+                border: 1px solid $black-color;
+
+                .fa-google-plus-g {
+                  font-size: 1.1rem;
+
+                  &:before {
+                    margin-right: 0px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .album {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 1.9rem;
+    padding-right: 1.2rem;
+
+    .img-fluid {
+      height: 5rem !important;
+    }
+  }
+}
