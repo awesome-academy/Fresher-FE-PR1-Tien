@@ -1,0 +1,8 @@
+extends ../layouts/info-layout.pug
+
+block new
+    .col-12.col-md-8.news
+        +news(0,true)(class="mb-0")
+            each item in newDetail
+                p.card-text.mt-4= item
+        +news(1)

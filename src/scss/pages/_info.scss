@@ -3,6 +3,11 @@
     margin-top: 2rem;
     margin-bottom: 3rem;
 
+    .card__link {
+      text-decoration: none;
+      color: $gray-color;
+    }
+
     .side__bar {
       margin-top: 2rem;
 
@@ -36,9 +41,9 @@
     }
 
     .news {
-        @include for-size(mobile) {
-            margin-top: 4rem;
-          }
+      @include for-size(mobile) {
+        margin-top: 4rem;
+      }
 
       .card {
         background-color: transparent;
@@ -62,17 +67,17 @@
               margin-right: 0.5rem;
             }
 
-            .content{
-                color: $gray-color;
+            .content {
+              color: $gray-color;
             }
           }
         }
 
-        .card-body{
-            .card-text{
-                line-height: 1.5rem;
-                color: $gray-color;
-            }
+        .card-body {
+          .card-text {
+            line-height: 1.5rem;
+            color: $gray-color;
+          }
         }
       }
     }
