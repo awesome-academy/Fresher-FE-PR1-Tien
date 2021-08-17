@@ -4,3 +4,36 @@ block title
     title Danh Sách Sản Phẩm
 
 block content
+    section#product-list.product__list
+        // breadcrumb
+        +breadcrumb([{link:"index",name:"Home"}], "Danh sách sản phẩm")(class="product__list__container")
+
+        // content
+        .container.product__list__container
+            .row
+                // sidebar
+                .col-4
+                    // product sort list
+                    .wrapper--bottom
+                        +sectionLabel("Danh mục sản phẩm","14")
+                    each product in productList
+                        +filterOption(product)
+
+                    // price sort list
+                    .wrapper
+                        .wrapper--bottom
+                            +sectionLabel("Tìm theo giá","10")
+                        each price in priceList
+                            +filterOption(price)
+
+                    // color sort list
+                    .wrapper
+                        .wrapper--bottom
+                            +sectionLabel("Tìm theo màu","10")
+                        .row.row-cols-1.row-cols-2.g-4
+                            each color in colors
+                                .col
+                                    +colorFilter(color.name, color.color)
+
+                // products list
+                .col-8

@@ -1,0 +1,27 @@
+.product__list {
+  .product__list__container {
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+
+    .breadcrumb {
+      &__link {
+        text-decoration: none;
+        color: $gray-color;
+
+        &__current {
+          @extend .breadcrumb__link;
+
+          color: $green-color;
+        }
+      }
+    }
+
+    .wrapper {
+      margin-top: 7rem;
+    }
+
+    .wrapper--bottom {
+      margin-bottom: 3rem;
+    }
+  }
+}

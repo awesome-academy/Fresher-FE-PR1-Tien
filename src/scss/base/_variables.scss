@@ -28,6 +28,16 @@ $dim-green-color: #36a66d;
 $yellow-color: #febf01;
 $red-color: #ed1c24;
 
+// color sort list
+$sort-colors: (
+  "green": #98cb4a,
+  "orange": #f76d3c,
+  "purple": #913ccd,
+  "blue": #5481e6,
+  "yellow": #f7d842,
+  "pink": #f15f74,
+);
+
 // media queries
 $breakpoints: (
   mobile-sm: 320px,
