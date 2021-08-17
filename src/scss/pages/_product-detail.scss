@@ -147,6 +147,8 @@
     }
 
     .tab-content {
+      margin-bottom: 5rem;
+
       .tab-pane {
         border-top: transparent;
         border-bottom: 1px solid $light-gray-color;
@@ -169,6 +171,22 @@
 
     .img-fluid {
       height: 5rem !important;
+    }
+  }
+
+  .similar__products {
+    position: relative;
+
+    .button__ctrl {
+      position: absolute;
+      display: flex;
+      width: 2rem;
+      top: -4rem;
+      right: 1rem;
+
+      .arrow {
+        color: $gray-color;
+      }
     }
   }
 }

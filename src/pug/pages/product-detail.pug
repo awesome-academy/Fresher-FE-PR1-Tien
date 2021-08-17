@@ -36,14 +36,14 @@ block content
                                     button.decrease__button
                                         i(class=`${plusIcon}`)
                             hr
-                            .container.d-flex.justify-content-start.mt-3
+                            .container.d-flex.justify-content-start.mt-4
                                 .d-flex.justify-content-between.inputs
                                     button.rounded-pill.buy__btn.me-2 MUA NGAY
                                     button.rounded-circle.border.border-dark.search__btn
                                         i(class=`${magnifyIcon}`)
                                     button.rounded-circle.border.border-dark.search__btn
                                         i(class=`${heartIcon}`)
-                            .d-flex.justify-content-start.mt-3
+                            .d-flex.justify-content-start.mt-4
                                 .d-flex.justify-content-between.social__group
                                     each icon in socialShareIcon
                                         a(class=`btn btn-sm btn__social ${icon.name}__color` href="#")
@@ -82,3 +82,25 @@ block content
 
         // similar products
         .container.product__detail__container
+            +sectionLabel('Sản phẩm cùng loại','14')
+            .mt-5.similar__products
+                #carouselExampleFade1.carousel.slide.carousel-fade(data-bs-ride="carousel")
+                    .carousel-inner
+                        .carousel-item.active
+                            .row.row-cols-1.row-cols-4.g-4
+                                - for (var i = 0; i < 4; i++) {
+                                    .col
+                                        +productCardVertical(products[i].src, products[i].alt, products[i].name, products[i].price, products[i].discount)
+                                - }
+                        .carousel-item
+                            .row.row-cols-1.row-cols-4.g-4
+                                - for (var i = 4; i < 8; i++) {
+                                    .col
+                                        +productCardVertical(products[i].src, products[i].alt, products[i].name, products[i].price, products[i].discount)
+                                - }
+                    .button__ctrl
+                        button.carousel-control-prev(type="button" data-bs-target="#carouselExampleFade1" data-bs-slide="prev")
+                            i(class=`arrow ${prevArrow}`)
+                        button.carousel-control-next(type="button" data-bs-target="#carouselExampleFade1" data-bs-slide="next")
+                            i(class=`arrow ${nextArrow}`)
+
