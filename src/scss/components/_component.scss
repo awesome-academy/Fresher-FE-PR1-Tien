@@ -169,3 +169,37 @@
     background-color: $green-color;
   }
 }
+
+// news card
+.news__cards {
+  border: none;
+
+  .img-fluid {
+    height: 11rem;
+  }
+
+  .card-body {
+    padding: 1rem 0rem;
+
+    .time {
+      font-style: italic;
+    }
+
+    .card-title {
+      margin-bottom: 15px;
+      color: $green-color;
+      font-weight: bold;
+    }
+
+    .card-text {
+      color: $gray-color;
+      line-height: 1.5rem;
+      margin-bottom: 15px;
+    }
+
+    .link {
+      text-decoration: none;
+      color: $green-color;
+    }
+  }
+}

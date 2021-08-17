@@ -56,3 +56,13 @@ mixin sectionLabel(label, width)
         span.label(style=`width: ${width}rem`)= label
         .progress
             .progress-bar(role="progressbar")(style=`width: ${width}rem`)
+
+// news card
+mixin newsCard(src, alt, time, title, content)
+    .card.h-100.rounded-0.news__cards
+        img.img-fluid(src=src class="card-img-top" alt=alt)
+        .card-body
+            p.card-text.time= time
+            h5.card-title= title
+            p.card-text= content
+            a.link(href="#") Đọc tiếp
