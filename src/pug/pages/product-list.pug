@@ -41,8 +41,8 @@ block content
                     a(class="w-100" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne")
                         +sectionLabel("Danh mục sản phẩm","14")
                     #collapseOne(class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample")
-                        each price in priceList
-                            +filterOption(price)
+                        each product in productList
+                            +filterOption(product)
 
                     // price sort list
                     a(class="w-100 mt-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo")
