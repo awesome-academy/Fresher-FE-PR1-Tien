@@ -100,4 +100,11 @@ block content
                         button.carousel-control-next(type="button" data-bs-target="#carouselExampleFade1" data-bs-slide="next")
                             i(class=`arrow ${nextArrow}`)
 
-        // 
+        // news
+        .container.main__container
+            +sectionLabel('Tin tức','8')
+            .row.row-cols-1.row-cols-3.g-4.mt-3
+                each item in news
+                    .col
+                        +newsCard(item.src, item.alt, item.time, item.title, item.content)
+
