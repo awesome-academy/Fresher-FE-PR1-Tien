@@ -8,13 +8,13 @@ block content
         // breadcrumb
         +breadcrumb([{link:"index",name:"Home"}], "Cây dạ lam")(class="product__detail__container")
 
-        // product-detail
+        // product detail description
         .container.product__detail__container
             .card.product__card.product__card--horizontal.rounded-0
                 .row.g-0
-                    .col-5.product__img
+                    .d-row.d-md-block.col-md-5.product__img
                         img(src="./assets/img/products/spx2-1.png" class="img-fluid rounded-start" alt="flower pot")
-                    .col-7
+                    .d-row.d-md-block.col-md-7
                         .card-body
                             a.card-title(href="product-detail.html") Cây Dạ Lam
                             p.card-text.my-3
@@ -36,14 +36,14 @@ block content
                                     button.decrease__button
                                         i(class=`${plusIcon}`)
                             hr
-                            .container.d-flex.justify-content-start.mt-3
+                            .container.d-flex.justify-content-start.mt-4
                                 .d-flex.justify-content-between.inputs
                                     button.rounded-pill.buy__btn.me-2 MUA NGAY
                                     button.rounded-circle.border.border-dark.search__btn
                                         i(class=`${magnifyIcon}`)
                                     button.rounded-circle.border.border-dark.search__btn
                                         i(class=`${heartIcon}`)
-                            .d-flex.justify-content-start.mt-3
+                            .d-flex.justify-content-start.mt-4
                                 .d-flex.justify-content-between.social__group
                                     each icon in socialShareIcon
                                         a(class=`btn btn-sm btn__social ${icon.name}__color` href="#")
@@ -51,10 +51,75 @@ block content
                                         .popup 0
 
         // product mini album
-        .container.mt-5
+        .d-none.d-md-block.container.mt-5
             .row
                 .col-5.album
-                    - for (var i = 0; i < 5; i ++) {
+                    - for (var i = 0; i < 5; i++) {
                         img.img-fluid(src=products[i].src alt=products[i].alt)
                     - }
 
+        // product detail
+        .container.product__detail__container
+            nav
+                .nav.nav-tabs#nav-tab(role="tablist")
+                    button(class="nav-link active" id="nav-info-tab" data-bs-toggle="tab" data-bs-target="#nav-info" type="button" role="tab" aria-controls="nav-info" aria-selected="true") Thông tin sản phẩm
+
+                    button(class="nav-link" id="nav-evaluate-tab" data-bs-toggle="tab" data-bs-target="#nav-evaluate" type="button" role="tab" aria-controls="nav-evaluate" aria-selected="false") Khách hàng đánh giá
+
+                    button(class="nav-link" id="nav-tag-tab" data-bs-toggle="tab" data-bs-target="#nav-tag" type="button" role="tab" aria-controls="nav-tag" aria-selected="false") Thẻ tag
+
+            .tab-content#nav-tabContent
+                .tab-pane.fade.show.active#nav-info(role="tabpanel" aria-labelledby="nav-info-tab")
+                    each item in productDetail
+                        p.text= item
+                .tab-pane.fade#nav-evaluate(role="tabpanel" aria-labelledby="nav-evaluate-tab")
+                    each item in productDetail
+                        p.text= item
+
+                .tab-pane.fade#nav-tag(role="tabpanel" aria-labelledby="nav-tag-tab")
+                    each item in productDetail
+                        p.text= item
+
+        // similar products
+        .container.product__detail__container.d-none.d-md-block
+            +sectionLabel('Sản phẩm cùng loại','14')
+            .mt-5.similar__products
+                #carouselExampleFade1.carousel.slide.carousel-fade(data-bs-ride="carousel")
+                    .carousel-inner
+                        .carousel-item.active
+                            .row.row-cols-1.row-cols-4.g-4
+                                - for (var i = 0; i < 4; i++) {
+                                    .col
+                                        +productCardVertical(products[i].src, products[i].alt, products[i].name, products[i].price, products[i].discount)
+                                - }
+                        .carousel-item
+                            .row.row-cols-1.row-cols-4.g-4
+                                - for (var i = 4; i < 8; i++) {
+                                    .col
+                                        +productCardVertical(products[i].src, products[i].alt, products[i].name, products[i].price, products[i].discount)
+                                - }
+                    .button__ctrl
+                        button.carousel-control-prev(type="button" data-bs-target="#carouselExampleFade1" data-bs-slide="prev")
+                            i(class=`arrow ${prevArrow}`)
+                        button.carousel-control-next(type="button" data-bs-target="#carouselExampleFade1" data-bs-slide="next")
+                            i(class=`arrow ${nextArrow}`)
+
+        // similar products (mobile)
+        .container.main__container.d-block.d-md-none.mb-5
+            +sectionLabel('Sản phẩm mới','10')
+            .mt-5.similar__products
+                #carouselExampleFade4.carousel.slide.carousel-fade(data-bs-ride="carousel")
+                    .carousel-inner
+                        each product in products
+                            if product.active
+                                .carousel-item.active
+                                    +productCardVertical(product.src, product.alt, product.name, product.price, product.discount)
+                            else
+                                .carousel-item
+                                    +productCardVertical(product.src, product.alt, product.name, product.price, product.discount)
+
+                    .button__ctrl
+                        button.carousel-control-prev(type="button" data-bs-target="#carouselExampleFade4" data-bs-slide="prev")
+                            i(class=`arrow ${prevArrow}`)
+                        button.carousel-control-next(type="button" data-bs-target="#carouselExampleFade4" data-bs-slide="next")
+                            i(class=`arrow ${nextArrow}`)
