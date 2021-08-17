@@ -68,27 +68,5 @@
         }
       }
     }
-
-    .pagination {
-      display: flex;
-      justify-content: space-between;
-      width: 60%;
-
-      @include for-size(mobile){
-        width: 100%;
-      }
-
-      .page-item {
-        .page-link {
-          padding: 1rem;
-          color: $gray-color;
-
-          &:focus {
-            background-color: $green-color;
-            color: $white-color;
-          }
-        }
-      }
-    }
   }
 }

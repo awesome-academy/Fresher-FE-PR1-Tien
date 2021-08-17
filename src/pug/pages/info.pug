@@ -12,7 +12,7 @@ block content
         .container.info__container
             .row
                 // sidebar
-                .d-none.d-md-block.col-4
+                .d-none.d-md-block.col-4.side__bar
                     // product sort list
                     +sectionLabel("Danh mục sản phẩm","14")
                     each product in productList
@@ -22,7 +22,7 @@ block content
                     .wrapper
                         +sectionLabel("Tin tức nổi bật","14")
                         each item in newThumbnails
-                            .card.mt-3
+                            .card.thumbnail.mt-3
                                 .row.g-0
                                     .col-md-4
                                         img(src=`${item.src}` class="img-fluid rounded-start" alt=`${item.alt}`)
@@ -36,3 +36,22 @@ block content
                         .mt-3
                             each tag in blogTag
                                 button(type="button" class="btn btn-outline-secondary rounded-0")= tag
+
+                // news
+                .col-8.news
+                    - for (var i = 0; i < 3; i++) {
+                        .card
+                            .card-header
+                                h5.card-title= newThumbnails[i].content
+                                .d-flex.justify-content-start
+                                    each icon in newIcon
+                                        .d-flex.me-4.justify-content-between.align-items-center.icon__group
+                                            i(class=`${icon.icon} icon`)
+                                            span.content= icon.content
+                            .card-body
+                                img(src=`${newThumbnails[i].src}` class="card-img-top" alt=`${newThumbnails[i].alt}`)
+                                p.card-text.mt-4 Như thể hiện sự thân thiện cũng như sự hiếu khách của gia chủ, phần không gian trước cửa nhà luôn được đầu tư và trang trí khá bắt mắt. Cũng có thể nói đây là bộ mặt của ngôi nhà, là ấn tượng đầu tiên khi một vị khách ghé chơi nhà bạn đấy. Hãy cùng Sài Gòn Hoa tham khảo một vài cách bố trí chậu cây hoa cảnh ngay trước cửa nhà sao cho ấn tượng nhất nhé!
+                    - }
+
+                    //pagination
+                    +pagination
