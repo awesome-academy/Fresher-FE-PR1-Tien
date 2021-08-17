@@ -4,3 +4,53 @@ block title
     title Giỏ Hàng
 
 block content
+    section#cart.cart
+        // breadcrumb
+        +breadcrumb([{link:"index",name:"Home"}], "Giỏ hàng")(class="cart__container")
+
+        .container.cart__container
+            // title
+            h2.title--green GIỎ HÀNG
+
+            // table
+            table.table.mt-5
+                thead.thead
+                    each item in tableHeader
+                        th= item
+                tbody.tbody
+                    - for (var i = 0; i < 3; i++){
+                        tr
+                            td
+                                img.img-fluid(src=products[i].src alt=products[i].alt)
+                            td.text--green CÂY VĂN PHÒNG
+                            td 270.000 đ
+                            td
+                                span.border.p-3 1
+                            td 270.000 đ
+                            td
+                                i(class=`${trashIcon}`)
+                    - }
+
+            // button group
+            .d-flex.justify-content-end.mt-5
+                .d-flex.justify-content-between.button__group
+                    +button("HUỶ ĐƠN HÀNG")
+                    +button("TIẾP TỤC MUA")
+
+            // total table
+            .d-flex.justify-content-end
+                table.table.total__table.mt-5.w-75
+                    tbody.tbody
+                        tr
+                            td.text--green TỔNG TIỀN  ( CHƯA THUẾ )
+                            td.text--green 270.000 đ
+                        tr
+                            td.text--green THUẾ  (VAT 10%)
+                            td.text--green 27.000 đ
+                    tfoot.tfoot
+                        td TỔNG PHẢI THANH TOÁN
+                        td 297.000 đ
+
+            // pay button
+            .d-flex.justify-content-end.mt-3
+                +button("THANH TOÁN")
