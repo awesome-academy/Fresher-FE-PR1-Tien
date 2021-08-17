@@ -18,7 +18,7 @@ header.header
             //sign-in, sign-up
             .top__menu--right.d-flex
                 each user in userIcons
-                    a(class="icon__link d-flex align-items-center")
+                    a(href=user.link class="icon__link d-flex align-items-center")
                         i(class=`fas fa-${user.icon}`)
                         span.ms-1= user.text
 
@@ -48,7 +48,8 @@ header.header
 
                 // shopping basket
                 .container.d-flex.basket__container.justify-content-between
-                    i(class=`${shoppingBasketIcon} text-dark fs-5 basket__icon`)
+                    a(href="cart.html")
+                        i(class=`${shoppingBasketIcon} text-dark fs-5 basket__icon`)
                     span(class="fs-6 mt-1") 0 Sản phẩm
 
     // navbar
@@ -79,6 +80,11 @@ header.header
                                 ul(class="dropdown-menu container-fluid" aria-labelledby="navbarDropdownMenuLink")
                                     li
                                         a(class="dropdown-item" href=`${link.id}.html`)= link.pages
+                        else if link.popup
+                            // popup
+                            li(class="nav-item popup")
+                                a(class="nav-link" data-bs-toggle="modal" data-bs-target="#staticBackdrop")= link.name
+
                         else
                             // nav-link
                             li(class="nav-item")

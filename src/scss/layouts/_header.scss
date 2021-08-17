@@ -151,17 +151,21 @@
       -ms-border-radius: 0px;
       -o-border-radius: 0px;
 
-      .dropdown-item{
+      .dropdown-item {
         color: $white-color;
         padding: 1rem 0px;
         display: flex;
         justify-content: center;
 
-        &:hover{
+        &:hover {
           color: $white-color;
           background-color: $dim-green-color;
         }
       }
+    }
+
+    .popup {
+      cursor: pointer;
     }
   }
 }
