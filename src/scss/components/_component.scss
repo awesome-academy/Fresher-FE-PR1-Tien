@@ -310,14 +310,98 @@
     text-decoration: none;
     color: $gray-color;
 
-    &__current, &__current:hover {
+    &__current,
+    &__current:hover {
       @extend .breadcrumb__link;
 
       color: $green-color;
     }
 
-    &:hover{
+    &:hover {
       @extend .breadcrumb__link;
     }
+  }
+}
+
+// pagination
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+
+  @include for-size(mobile) {
+    width: 100%;
+  }
+
+  .page-item {
+    box-shadow: none;
+
+    .page-link {
+      padding: 1rem;
+      color: $gray-color;
+
+      @include for-size(mobile) {
+        padding: 1rem 2rem;
+      }
+
+      &:focus {
+        background-color: $green-color;
+        color: $white-color;
+      }
+    }
+  }
+}
+
+// button form
+.form__btn {
+  background-color: $green-color;
+  color: $white-color;
+  border: none;
+  height: 3rem;
+  width: 9rem;
+
+  &:hover {
+    background-color: $white-color;
+    color: $green-color;
+    border: 1px solid $green-color;
+  }
+}
+
+// form
+.input__form {
+  @include for-size(mobile) {
+    margin-top: 1rem;
+  }
+
+  .label,
+  .input {
+    display: block;
+  }
+
+  .label {
+    .star {
+      color: $red-color;
+    }
+  }
+
+  .input:not([type="checkbox"]) {
+    border: 1px solid $light-gray-color;
+    padding: 1rem;
+    width: 100%;
+  }
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  margin-top: 0px;
+
+  .label {
+    margin-left: 1rem;
+    font-size: 1.5rem;
+  }
+
+  .star {
+    display: none;
   }
 }
