@@ -3,20 +3,6 @@
     margin-top: 2rem;
     margin-bottom: 3rem;
 
-    .wrapper {
-      margin-top: 5rem;
-    }
-
-    .wrapper--bottom {
-      margin-bottom: 3rem;
-      margin-top: 2rem;
-
-      @include for-size(tablet){
-        margin-top: 3rem;
-        margin-bottom: 2rem;
-      }
-    }
-
     .cover {
       background-image: url("../assets/img/news/The_Sill_84_Hester.jpg");
       background-repeat: no-repeat;
