@@ -10,6 +10,7 @@
 
       .product__img {
         height: 100%;
+        padding: 0;
       }
 
       .card-body {
@@ -32,6 +33,10 @@
         .button__group {
           width: 40%;
 
+          @include for-size(mobile) {
+            width: 60%;
+          }
+
           .increase__button {
             background-color: transparent;
             padding: 1rem;
@@ -52,9 +57,17 @@
 
         .inputs {
           width: 40%;
+
+          @include for-size(mobile) {
+            width: 60%;
+          }
         }
 
         .social__group {
+          @include for-size(mobile) {
+            width: 60%;
+          }
+
           .btn__social {
             margin-right: 5px;
 
@@ -122,16 +135,75 @@
         }
       }
     }
+
+    .nav {
+      margin-top: 5rem;
+
+      .nav-link {
+        color: $black-color;
+        font-size: 1.5rem;
+        font-weight: bold;
+        padding: 1rem 5rem;
+        text-transform: uppercase;
+        border-radius: 0px;
+        -webkit-border-radius: 0px;
+        -moz-border-radius: 0px;
+        -ms-border-radius: 0px;
+        -o-border-radius: 0px;
+
+        @include for-size(mobile){
+          font-size: 1rem;
+          padding: 1rem 1.5rem;
+        }
+
+        &:focus {
+          color: $green-color;
+          border-top: 2px solid $black-color;
+        }
+      }
+    }
+
+    .tab-content {
+      margin-bottom: 5rem;
+
+      .tab-pane {
+        border-top: transparent;
+        border-bottom: 1px solid $light-gray-color;
+        border-left: 1px solid $light-gray-color;
+        border-right: 1px solid $light-gray-color;
+        padding: 3rem;
+        padding-bottom: 0px;
+
+        .text {
+          margin-bottom: 2rem;
+        }
+      }
+    }
   }
 
   .album {
     display: flex;
     justify-content: space-between;
-    padding-left: 1.9rem;
-    padding-right: 1.2rem;
+    margin-right: 0px;
 
     .img-fluid {
       height: 5rem !important;
+    }
+  }
+
+  .similar__products {
+    position: relative;
+
+    .button__ctrl {
+      position: absolute;
+      display: flex;
+      width: 2rem;
+      top: -4rem;
+      right: 1rem;
+
+      .arrow {
+        color: $gray-color;
+      }
     }
   }
 }

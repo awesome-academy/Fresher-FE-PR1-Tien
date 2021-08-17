@@ -1,6 +1,11 @@
-extends ../layouts/default-layout.pug
+extends ../layouts/info-layout.pug
 
-block title
-    title Tin Tức
+block new
+    // news
+    .col-12.col-md-8.news
+        - for (var i = 0; i < 3; i++) {
+            +news(i,true)
+        - }
 
-block content
+        //pagination
+        +pagination
