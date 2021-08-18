@@ -39,7 +39,7 @@ block content
 
         // sale products and top-sale products
         .container.main__container
-            .row
+            .row.d-none.d-md-flex
                 // top-sale products
                 .col-4
                     +sectionLabel('Sản phẩm mua nhiều','15')
@@ -72,12 +72,52 @@ block content
                                 button.carousel-control-next(type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next")
                                     i(class=`arrow ${nextArrow}`)
 
+            // top-sale products (mobile)
+            .container.top__sale__products.d-block.d-md-none
+                +sectionLabel('Sản phẩm mua nhiều','15')
+                .mt-5
+                    #carouselExampleFade2.carousel.slide.carousel-fade(data-bs-ride="carousel")
+                        .carousel-inner
+                            .carousel-item.active
+                                - for (var i = 0; i < 3; i++) {
+                                    +productCardHorizontal(products[i].src, products[i].alt, products[i].name, products[i].price, products[i].discount)
+                                - }
+                            .carousel-item
+                                - for (var i = 3; i < 6; i++) {
+                                    +productCardHorizontal(products[i].src, products[i].alt, products[i].name, products[i].price, products[i].discount)
+                                - }
+
+                        .button__ctrl
+                            button.carousel-control-prev(type="button" data-bs-target="#carouselExampleFade2" data-bs-slide="prev")
+                                i(class=`arrow ${prevArrow}`)
+                            button.carousel-control-next(type="button" data-bs-target="#carouselExampleFade2" data-bs-slide="next")
+                                i(class=`arrow ${nextArrow}`)
+
+            // sale products (mobile)
+            .container.sale__products.d-block.d-md-none
+                +sectionLabel('Sản phẩm khuyến mãi','15')
+                .mt-5
+                    #carouselExampleFade3.carousel.slide.carousel-fade(data-bs-ride="carousel")
+                        .carousel-inner
+                            each product in products
+                                if product.active
+                                    .carousel-item.active
+                                        +productCardVertical(product.src, product.alt, product.name, product.price, product.discount)(class="card__badge__discount")
+                                else
+                                    .carousel-item
+                                        +productCardVertical(product.src, product.alt, product.name, product.price, product.discount)(class="card__badge__discount")
+                        .button__ctrl
+                            button.carousel-control-prev(type="button" data-bs-target="#carouselExampleFade3" data-bs-slide="prev")
+                                i(class=`arrow ${prevArrow}`)
+                            button.carousel-control-next(type="button" data-bs-target="#carouselExampleFade3" data-bs-slide="next")
+                                i(class=`arrow ${nextArrow}`)
+
         // cover
         .container.main__container
-            img.img-fluid(src=cover.src alt=cover.alt)
+            img.img-fluid.cover(src=cover.src alt=cover.alt)
 
         // new products
-        .container.main__container
+        .container.main__container.d-none.d-md-block
             +sectionLabel('Sản phẩm mới','10')
             .mt-5.new__products
                 #carouselExampleFade1.carousel.slide.carousel-fade(data-bs-ride="carousel")
@@ -100,8 +140,28 @@ block content
                         button.carousel-control-next(type="button" data-bs-target="#carouselExampleFade1" data-bs-slide="next")
                             i(class=`arrow ${nextArrow}`)
 
+        // new products (mobile)
+        .container.main__container.d-block.d-md-none
+            +sectionLabel('Sản phẩm mới','10')
+            .mt-5.new__products
+                #carouselExampleFade4.carousel.slide.carousel-fade(data-bs-ride="carousel")
+                    .carousel-inner
+                        each product in products
+                            if product.active
+                                .carousel-item.active
+                                    +productCardVertical(product.src, product.alt, product.name, product.price, product.discount)(class="card__badge__new")
+                            else
+                                .carousel-item
+                                    +productCardVertical(product.src, product.alt, product.name, product.price, product.discount)(class="card__badge__new")
+
+                    .button__ctrl
+                        button.carousel-control-prev(type="button" data-bs-target="#carouselExampleFade4" data-bs-slide="prev")
+                            i(class=`arrow ${prevArrow}`)
+                        button.carousel-control-next(type="button" data-bs-target="#carouselExampleFade4" data-bs-slide="next")
+                            i(class=`arrow ${nextArrow}`)
+
         // news
-        .container.main__container
+        .container.main__container.d-none.d-md-block
             +sectionLabel('Tin tức','8')
             .row.row-cols-1.row-cols-3.g-4.mt-3
                 each item in news

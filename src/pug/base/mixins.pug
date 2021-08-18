@@ -16,7 +16,7 @@ mixin emailInput
 
 // product card
 mixin productCardVertical(src, alt, name, price, discount)
-    .card.rounded-0.h-100.product__card&attributes(attributes)
+    .card.rounded-0.h-100.product__card--vertical.product__card&attributes(attributes)
         .container-fluid
             img(src=src class="card-img-top" alt=alt)
             .card-img-overlay.rounded-0
@@ -36,11 +36,11 @@ mixin productCardVertical(src, alt, name, price, discount)
                 span.product__discount= discount
 
 mixin productCardHorizontal(src, alt, name, price, discount)
-    .card.product__card.h-100.product__card--horizontal.rounded-0
+    .card.product__card.product__card--horizontal.rounded-0
         .row.g-0
-            .col-md-4.product__img
+            .col-4.product__img
                 img(src=src class="img-fluid rounded-start" alt=alt)
-            .col-md-8
+            .col-8
                 .card-body
                     h5.card-title= name
                     p.card-text.mb-2
