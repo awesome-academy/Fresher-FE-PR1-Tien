@@ -66,3 +66,28 @@ mixin newsCard(src, alt, time, title, content)
             h5.card-title= title
             p.card-text= content
             a.link(href="#") Đọc tiếp
+
+// filter option
+mixin filterOption(content)
+    .filter__option
+        i(class=`icon ${arrowRight} me-2`)
+        a.content(href="#")= content
+
+// color filter
+mixin colorFilter(name, color)
+    .d-flex.align-items-center.color__filter
+        span(class=`${color}__color me-3`)
+        span.name= name
+
+// breadcrumb
+mixin breadcrumb(items, current)
+    .container&attributes(attributes)
+        nav(aria-label="breadcrumb")
+            ol.breadcrumb
+                each item in items
+                    li.breadcrumb-item
+                        a.breadcrumb__link(href=`${item.link}.html`)=  item.name
+
+                if current
+                    li.breadcrumb-item
+                        a.breadcrumb__link__current=  current
