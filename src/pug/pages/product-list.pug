@@ -90,7 +90,7 @@ block content
                                 label.me-3(for="number") Show
                                 .select
                                     select.sort(name="number")
-                                        - for(var i = 15; i => 5; i-=5) {
+                                        - for (var i = 15; i >= 5; i -=5) {
                                             option(value=`${i}`)= i
                                         - }
 

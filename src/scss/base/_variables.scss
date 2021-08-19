@@ -39,6 +39,14 @@ $sort-colors: (
   "pink": #f15f74,
 );
 
+// social share button color
+$social-share-color:(
+  "facebook":#5979ce,
+  "twitter":#1da1f2,
+  "google":#db4437,
+  "blogger":#fe6e4c,
+);
+
 // media queries
 $breakpoints: (
   mobile-sm: 320px,

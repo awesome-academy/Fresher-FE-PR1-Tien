@@ -72,6 +72,11 @@
     }
   }
 
+  .card-title {
+    text-decoration: none;
+    color: $black-color;
+  }
+
   .product__star {
     color: $yellow-color;
     font-size: 0.8rem;
@@ -295,6 +300,24 @@
       -moz-border-radius: 50%;
       -ms-border-radius: 50%;
       -o-border-radius: 50%;
+    }
+  }
+}
+
+// breadcrumb
+.breadcrumb {
+  &__link {
+    text-decoration: none;
+    color: $gray-color;
+
+    &__current, &__current:hover {
+      @extend .breadcrumb__link;
+
+      color: $green-color;
+    }
+
+    &:hover{
+      @extend .breadcrumb__link;
     }
   }
 }
