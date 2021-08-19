@@ -36,7 +36,7 @@ mixin productCardVertical(src, alt, name, price, discount)
                 span.product__discount= discount
 
 mixin productCardHorizontal(src, alt, name, price, discount)
-    .card.product__card.product__card--horizontal.rounded-0
+    .card.product__card.product__card--horizontal.rounded-0&attributes(attributes)
         .row.g-0
             .col-4.product__img
                 img(src=src class="img-fluid rounded-start" alt=alt)
@@ -48,7 +48,16 @@ mixin productCardHorizontal(src, alt, name, price, discount)
                             i(class=`product__star ${fullStar}`)
                         - }
                         i(class=`product__star ${halfStar}`)
+                    block
                     span.me-2.product__price= price
+                    if block
+                        .container.d-flex.justify-content-start.mt-3
+                            .d-flex.justify-content-between.inputs
+                                button.rounded-pill.buy__btn.me-2 MUA NGAY
+                                button.rounded-circle.border.border-dark.search__btn
+                                    i(class=`${magnifyIcon}`)
+                                button.rounded-circle.border.border-dark.search__btn
+                                    i(class=`${heartIcon}`)
 
 // section label
 mixin sectionLabel(label, width)

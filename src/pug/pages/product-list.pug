@@ -12,7 +12,7 @@ block content
         .container.product__list__container
             .row
                 // sidebar
-                .col-4
+                .d-none.d-md-block.col-4
                     // product sort list
                     .wrapper--bottom
                         +sectionLabel("Danh mục sản phẩm","14")
@@ -35,13 +35,38 @@ block content
                                 .col
                                     +colorFilter(color.name, color.color)
 
+                // sidebar (mobile)
+                .d-block.d-md-none.accordion#accordionExample
+                    // product sort list
+                    a(class="w-100" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne")
+                        +sectionLabel("Danh mục sản phẩm","14")
+                    #collapseOne(class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample")
+                        each price in priceList
+                            +filterOption(price)
+
+                    // price sort list
+                    a(class="w-100 mt-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo")
+                        +sectionLabel("Tìm theo giá","10")
+                    #collapseTwo(class="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#accordionExample")
+                        each price in priceList
+                            +filterOption(price)
+
+                    // color sort list
+                    a(class="w-100 mt-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree")
+                        +sectionLabel("Tìm theo màu","10")
+                    #collapseThree(class="accordion-collapse collapse show" aria-labelledby="headingThree" data-bs-parent="#accordionExample")
+                        .row.row-cols-1.row-cols-2.g-4
+                            each color in colors
+                                .col
+                                    +colorFilter(color.name, color.color)
+
                 // products list
-                .col-8
+                .d-row.col-md-8
                     // cover
-                    .cover
+                    .cover.d-none.d-md-block
 
                     // input group
-                    .d-flex.justify-content-between.align-items-baseline.wrapper
+                    .d-flex.justify-content-between.align-items-baseline.mt-5
                         // grid and list buttons
                         ul.nav.nav-pills#pills-tab(role="tablist")
                             li.nav-item(role="presentation")
@@ -80,7 +105,12 @@ block content
                                 - }
 
                         // list
-                        .tab-pane.fade#pills-list(role="tabpanel" aria-labelledby="pills-list-tab") ...
+                        .tab-pane.fade#pills-list(role="tabpanel" aria-labelledby="pills-list-tab")
+                            - for (var i = 0; i < 5; i++) {
+                                .mt-5
+                                    +productCardHorizontal(products[i].src, products[i].alt, products[i].name, products[i].price, products[i].discount)(class="tab-img")
+                                        p.my-3 Cây Ngọc ngân là loại cây dành cho tình yêu! Đây là món quà bất ngờ để bạn tặng người ấy. Ngọc Ngân không chỉ đẹp ở phiến lá xanh đốm trắng.
+                            - }
 
                     // pagination
                     nav.mt-5.d-flex.justify-content-end(aria-label="Page navigation example")
