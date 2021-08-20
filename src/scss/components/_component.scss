@@ -310,14 +310,40 @@
     text-decoration: none;
     color: $gray-color;
 
-    &__current, &__current:hover {
+    &__current,
+    &__current:hover {
       @extend .breadcrumb__link;
 
       color: $green-color;
     }
 
-    &:hover{
+    &:hover {
       @extend .breadcrumb__link;
+    }
+  }
+}
+
+// pagination
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+
+  @include for-size(mobile) {
+    width: 100%;
+  }
+
+  .page-item {
+    box-shadow: none;
+
+    .page-link {
+      padding: 1rem;
+      color: $gray-color;
+
+      &:focus {
+        background-color: $green-color;
+        color: $white-color;
+      }
     }
   }
 }

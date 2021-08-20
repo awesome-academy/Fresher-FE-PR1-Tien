@@ -1,32 +1,74 @@
 .info {
   &__container {
-    margin-top: 4rem;
+    margin-top: 2rem;
     margin-bottom: 3rem;
 
-    .card {
-      background-color: transparent;
-      border: none;
+    .side__bar {
+      margin-top: 2rem;
 
-      .card-body {
-        padding-top: 0px;
+      .thumbnail {
+        background-color: transparent;
+        border: none;
 
-        .card-title {
-          line-height: 2rem;
+        .card-body {
+          padding-top: 0px;
+
+          .card-title {
+            line-height: 2rem;
+          }
+        }
+      }
+
+      .blog__tag {
+        .btn {
+          padding-right: 1.5rem;
+          padding-left: 1.5rem;
+          margin-bottom: 0.5rem;
+
+          &:focus,
+          &:hover {
+            color: $white-color;
+            background-color: $green-color;
+            box-shadow: none;
+          }
         }
       }
     }
 
-    .blog__tag {
-      .btn {
-        padding-right: 1.5rem;
-        padding-left: 1.5rem;
-        margin-bottom: 0.5rem;
+    .news {
+      .card {
+        background-color: transparent;
+        border: none;
+        margin-bottom: 3rem;
 
-        &:focus,
-        &:hover {
-          color: $white-color;
-          background-color: $green-color;
-          box-shadow: none;
+        .card-header {
+          background-color: transparent;
+          padding-top: 0;
+          line-height: 1.5rem;
+          border: none;
+
+          .card-title {
+            color: $dim-gray-color;
+            font-size: 1.3rem;
+          }
+
+          .icon__group {
+            .icon {
+              color: $green-color;
+              margin-right: 0.5rem;
+            }
+
+            .content{
+                color: $gray-color;
+            }
+          }
+        }
+
+        .card-body{
+            .card-text{
+                line-height: 1.5rem;
+                color: $gray-color;
+            }
         }
       }
     }
