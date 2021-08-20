@@ -10,6 +10,7 @@
 
       .product__img {
         height: 100%;
+        padding: 0;
       }
 
       .card-body {
@@ -122,13 +123,49 @@
         }
       }
     }
+
+    .nav {
+      margin-top: 5rem;
+
+      .nav-link {
+        color: $black-color;
+        font-size: 1.5rem;
+        font-weight: bold;
+        padding: 1rem 5rem;
+        text-transform: uppercase;
+        border-radius: 0px;
+        -webkit-border-radius: 0px;
+        -moz-border-radius: 0px;
+        -ms-border-radius: 0px;
+        -o-border-radius: 0px;
+
+        &:focus {
+          color: $green-color;
+          border-top: 2px solid $black-color;
+        }
+      }
+    }
+
+    .tab-content {
+      .tab-pane {
+        border-top: transparent;
+        border-bottom: 1px solid $light-gray-color;
+        border-left: 1px solid $light-gray-color;
+        border-right: 1px solid $light-gray-color;
+        padding: 3rem;
+        padding-bottom: 0px;
+
+        .text {
+          margin-bottom: 2rem;
+        }
+      }
+    }
   }
 
   .album {
     display: flex;
     justify-content: space-between;
-    padding-left: 1.9rem;
-    padding-right: 1.2rem;
+    margin-right: 0px;
 
     .img-fluid {
       height: 5rem !important;

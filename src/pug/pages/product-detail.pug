@@ -8,7 +8,7 @@ block content
         // breadcrumb
         +breadcrumb([{link:"index",name:"Home"}], "Cây dạ lam")(class="product__detail__container")
 
-        // product-detail
+        // product detail description
         .container.product__detail__container
             .card.product__card.product__card--horizontal.rounded-0
                 .row.g-0
@@ -54,7 +54,31 @@ block content
         .container.mt-5
             .row
                 .col-5.album
-                    - for (var i = 0; i < 5; i ++) {
+                    - for (var i = 0; i < 5; i++) {
                         img.img-fluid(src=products[i].src alt=products[i].alt)
                     - }
 
+        // product detail
+        .container.product__detail__container
+            nav
+                .nav.nav-tabs#nav-tab(role="tablist")
+                    button(class="nav-link active" id="nav-info-tab" data-bs-toggle="tab" data-bs-target="#nav-info" type="button" role="tab" aria-controls="nav-info" aria-selected="true") Thông tin sản phẩm
+
+                    button(class="nav-link" id="nav-evaluate-tab" data-bs-toggle="tab" data-bs-target="#nav-evaluate" type="button" role="tab" aria-controls="nav-evaluate" aria-selected="false") Khách hàng đánh giá
+
+                    button(class="nav-link" id="nav-tag-tab" data-bs-toggle="tab" data-bs-target="#nav-tag" type="button" role="tab" aria-controls="nav-tag" aria-selected="false") Thẻ tag
+
+            .tab-content#nav-tabContent
+                .tab-pane.fade.show.active#nav-info(role="tabpanel" aria-labelledby="nav-info-tab")
+                    each item in productDetail
+                        p.text= item
+                .tab-pane.fade#nav-evaluate(role="tabpanel" aria-labelledby="nav-evaluate-tab")
+                    each item in productDetail
+                        p.text= item
+
+                .tab-pane.fade#nav-tag(role="tabpanel" aria-labelledby="nav-tag-tab")
+                    each item in productDetail
+                        p.text= item
+
+        // similar products
+        .container.product__detail__container
