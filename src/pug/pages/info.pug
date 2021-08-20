@@ -4,3 +4,35 @@ block title
     title Tin Tức
 
 block content
+    section#info.info
+        // breadcrumb
+        +breadcrumb([{link:"index",name:"Home"}], "Tin tức")(class="mt-4")
+
+        // content
+        .container.info__container
+            .row
+                // sidebar
+                .d-none.d-md-block.col-4
+                    // product sort list
+                    +sectionLabel("Danh mục sản phẩm","14")
+                    each product in productList
+                        +filterOption(product)
+
+                    // popular news
+                    .wrapper
+                        +sectionLabel("Tin tức nổi bật","14")
+                        each item in newThumbnails
+                            .card.mt-3
+                                .row.g-0
+                                    .col-md-4
+                                        img(src=`${item.src}` class="img-fluid rounded-start" alt=`${item.alt}`)
+                                    .col-md-8
+                                        .card-body
+                                            h5.card-title= item.content
+
+                    // blog tag
+                    .wrapper.blog__tag
+                        +sectionLabel("Blog Tag","7")
+                        .mt-3
+                            each tag in blogTag
+                                button(type="button" class="btn btn-outline-secondary rounded-0")= tag
