@@ -36,6 +36,10 @@
     }
 
     .news {
+        @include for-size(mobile) {
+            margin-top: 4rem;
+          }
+
       .card {
         background-color: transparent;
         border: none;
