@@ -1,4 +1,6 @@
 .info {
+  background-color: $white-color;
+
   &__container {
     margin-top: 2rem;
     margin-bottom: 3rem;
@@ -80,6 +82,44 @@
           }
         }
       }
+    }
+
+    .comment {
+      margin-bottom: 0px !important;
+
+      .margin-left {
+        margin-left: 20%;
+      }
+
+      .row {
+        .zoom {
+          background-image: url("../assets/img/avatar/download.jpg");
+          width: 6rem;
+          height: 6rem;
+          background-size: cover;
+          background-position: center;
+          border-radius: 50%;
+          transform: scaleX(-1);
+        }
+
+        .card-body {
+          padding-top: 2rem;
+
+          .content {
+            font-size: 0.7rem;
+          }
+        }
+
+        .reply {
+          color: $black-color;
+          font-size: 1rem;
+          font-weight: bold;
+        }
+      }
+    }
+
+    .border-top {
+      border-top: 1px solid $black-color !important;
     }
   }
 }
