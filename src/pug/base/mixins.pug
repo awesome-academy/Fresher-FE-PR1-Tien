@@ -113,3 +113,21 @@ mixin pagination
             - }
             li.page-item
                 a(class="page-link" href="#") Trang cuối
+
+// news
+mixin news(number,header=false)
+    .card&attributes(attributes)
+        if header
+            .card-header
+                h5.card-title= newThumbnails[number].content
+                .d-flex.justify-content-start
+                    each icon in newIcon
+                        .d-flex.me-4.justify-content-between.align-items-center.icon__group
+                            i(class=`${icon.icon} icon`)
+                            span.content= icon.content
+        .card-body
+            a(href="info-detail.html")
+                img(src=`${newThumbnails[number].src}` class="card-img-top" alt=`${newThumbnails[number].alt}`)
+            p.card-text.mt-4 Như thể hiện sự thân thiện cũng như sự hiếu khách của gia chủ, phần không gian trước cửa nhà luôn được đầu tư và trang trí khá bắt mắt. Cũng có thể nói đây là bộ mặt của ngôi nhà, là ấn tượng đầu tiên khi một vị khách ghé chơi nhà bạn đấy. Hãy cùng Sài Gòn Hoa tham khảo một vài cách bố trí chậu cây hoa cảnh ngay trước cửa nhà sao cho ấn tượng nhất nhé!
+            block
+
